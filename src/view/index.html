@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 side-bar">
+            <%= require('html-loader!./layout/nav-side.html') %>
+        </div>
+        <div class="col-md-10 page-content">
+            <div class="index-title">
+                这个是Raymall电商平台的首页，下面是一些bootstap的样式拿来快速参考而已
+            </div>
+            <div class="container-fluid">
+
+                <div style="margin-bottom: 30px">
+                    <!--dropdown：设置下拉菜单-->
+                    <!--data-toggle="dropdown"：表明绑定事件-->
+                    <li class="dropdown btn btn-default btn-lg">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">特点
+                            <!--向下的角标-->
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Fast</li>
+                            <!--这里对应这下面标签页的打开-->
+                            <li><a href="#tab-chrome">chrome</a></li>
+                            <li><a href="#tab-firefox">firefox</a></li>
+                            <li><a href="#tab-safari">Safari</a></li>
+                            <!--下面这个是分割线-->
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Middle</li>
+                            <li><a href="#tab-opera">Opera</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Slow</li>
+                            <li><a href="#tab-ie">IE</a></li>
+                        </ul>
+                    </li>
+                    <!--按钮样式-->
+                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#about-modal">
+                        显示弹窗
+                    </button>
+                    <button type="submit" class="btn btn-danger btn-block">danger</button>
+                    <button type="submit" class="btn btn-success disabled">success</button>
+                </div>
+
+
+                <!--弹出框-->
+                <!--主题分为header、body、footer-->
+                <div class="modal fade " id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!--data-dismiss="modal"表示关闭弹出框-->
+                                <!--close是左上角关闭的样式-->
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span
+                                        class="sr-only">关闭</span></button>
+                                <h4 class="modal-title" id="modal-label">关于</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>慕课网隶属于北京慕课科技中心(有限合伙)，是一家从事互联网免费教学的网络教育公司。秉承“开拓、创新、公平、分享”的精神，
+                                    将互联网特性全面的应用在教育领域，致力于为教育机构及求学者打造一站式互动在线教育品牌。</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider"/>
+
+                <span>表格</span>
+                <!--表格样式-->
+                <!--table:基本样式-->
+                <!--table-striped:水平斑马线-->
+                <!--table-bordered:边框-->
+                <!--table-hover:划过变色-->
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr class="active">
+                        <th>标题一</th>
+                        <th>标题二</th>
+                        <th>标题三</th>
+                        <th>标题四</th>
+                        <th>标题五</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="danger">
+                        <td>内容一</td>
+                        <td>内容二</td>
+                        <td>内容三</td>
+                        <td>内容四</td>
+                        <td>内容五</td>
+                    </tr>
+                    <tr>
+                        <td>内容一</td>
+                        <td>内容二</td>
+                        <td>内容三</td>
+                        <td>内容四</td>
+                        <td>内容五</td>
+                    </tr>
+                    <tr>
+                        <td>内容一</td>
+                        <td>内容二</td>
+                        <td>内容三</td>
+                        <td>内容四</td>
+                        <td>内容五</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!--表单输入-->
+                <!--form-group:标识标签和输入框为一个组-->
+                <!--form-control：默认的输入框样式-->
+                <!--form-inline:设置为水平排版，默认每个元素都是block-->
+                <!--input-lg:调整样式大小-->
+                <!--sr-only: 不显示自己-->
+                <!--control-label配合has-success，控制样式-->
+                <!--input-group和input-group-addon: 配合使用实现圆角一直的输入框组-->
+                <form>
+                    <div class="form-group form-inline input-group">
+                        <label class="sr-only">this is a input : </label>
+                        <a href="#" class="btn btn-default input-group-addon">*</a>
+                        <input type="text" placeholder="this is a input" class="form-control"/>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label class="control-label">this is a select</label>
+                        <select type="text" placeholder="this is a input" class="form-control input-lg">
+                            <option value="">北京</option>
+                            <option value="">上海</option>
+                            <option value="">广州</option>
+                            <option value="">深圳</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>this is a textarea</label>
+                        <textarea type="text" placeholder="this is a input"
+                                  class="form-control">hahahhahahahah</textarea>
+                    </div>
+                </form>
+
+                <div class="list-group">
+                    <a class="list-group-item active">chrome</a>
+                    <a class="list-group-item">firefox</a>
+                    <a class="list-group-item">safari</a>
+                    <a class="list-group-item">opera</a>
+                    <a class="list-group-item">IE</a>
+                </div>
+
+
+                <!--标签头信息-->
+                <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+                    <li class="active"><a href="#tab-chrome" role="tab" data-toggle="tab">Chrome</a></li>
+                    <li><a href="#tab-firefox" role="tab" data-toggle="tab">Firefox</a></li>
+                    <li><a href="#tab-safari" role="tab" data-toggle="tab">Safari</a></li>
+                    <li><a href="#tab-opera" role="tab" data-toggle="tab">Opera</a></li>
+                    <li><a href="#tab-ie" role="tab" data-toggle="tab">IE</a></li>
+                </ul>
+                <!--标签内容-->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab-chrome">
+                        <div class="row">
+
+                            <h2 class="feature-heading">Google Chrome <span
+                                    class="text-muted">使用最广的浏览器</span></h2>
+
+                            <p class="lead">Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。
+                                该浏览器是基于其他开源软件所撰写，包括WebKit，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-firefox">
+                        <div class="row">
+                            <h2 class="feature-heading">Mozilla Firefox <span class="text-muted">美丽的狐狸</span>
+                            </h2>
+
+                            <p class="lead">Mozilla Firefox，中文名通常称为“火狐”或“火狐浏览器”，是一个开源网页浏览器，
+                                使用Gecko引擎（非ie内核），支持多种操作系统如Windows、Mac和linux。</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-safari">
+                        <div class="row">
+                            <h2 class="feature-heading">Safari <span class="text-muted">Mac用户首选</span></h2>
+                            <p class="lead">Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器，使用了KDE的KHTML作为浏览器的运算核心。
+                                Safari在2003年1月7日首度发行测试版，并成为Mac OS X v10.3与之后的默认浏览器，也是iPhone与IPAD和iPod
+                                touch的指定浏览器。</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-opera">
+                        <div class="row">
+                            <h2 class="feature-heading">Opera <span class="text-muted">小众但易用</span>
+                            </h2>
+                            <p class="lead">Opera浏览器，是一款挪威Opera Software ASA公司制作的支持多页面标签式浏览的网络浏览器。
+                                是跨平台浏览器可以在Windows、Mac和Linux三个操作系统平台上运行。.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-ie">
+                        <div class="row ">
+                            <h2 class="feature-heading">IE <span class="text-muted">你懂的</span></h2>
+                            <p class="lead">Internet Explorer，原称Microsoft Internet Explorer(6版本以前)和Windows Internet
+                                Explorer(7，8，9，10版本)，
+                                简称IE，是美国微软公司推出的一款网页浏览器。它采用的排版引擎(俗称内核)为Trident。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

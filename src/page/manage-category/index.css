@@ -1,0 +1,30 @@
+/*新增品类按钮*/
+.page-title .btn-add-category {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+/*重新加载按钮*/
+.page-title .btn-refresh {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+
+.category-current-info .category-current-id {
+    cursor: auto;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.category-list .table-category-list{
+    font-size: 14px;
+}
+.category-list .table-category-list a{
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+

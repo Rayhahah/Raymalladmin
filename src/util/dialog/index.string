@@ -1,0 +1,28 @@
+<div class="container-fluid ray-dialog ray-close">
+    <div class="col-md-4 col-md-offset-4 ray-dialog-container">
+        <div class="ray-dialog-message">
+            {{message}}
+        </div>
+        {{#isInput}}
+        <div class="ray-dialog-input">
+            <input type="text" placeholder="{{message}}" class="dialog-input"/>
+        </div>
+        {{/isInput}}
+
+        <div class="ray-dialog-opera">
+        {{#isConfirm}}
+         <span class="ray-dialog-cancel">
+                        取消
+         </span>
+         <span class="ray-dialog-confirm">
+             确认
+         </span>
+        {{/isConfirm}}
+        {{^isConfirm}}
+        <span class="ray-dialog-confirm center">
+            确认
+        </span>
+        {{/isConfirm}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 side-bar">
+            <%= require('html-loader!./layout/nav-side.html') %>
+        </div>
+        <div class="col-md-10 page-content">
+
+        </div>
+    </div>
+</div>
+
+<%= require('html-loader!./layout/footer.html') %>
+<script type="text/javascript" src="../util/jqpaginator.min.js"></script>
+
+</body>
+</html>

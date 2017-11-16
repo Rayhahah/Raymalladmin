@@ -1,0 +1,36 @@
+/*立即发货*/
+.page-title .btn-send-goods {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+/*订单详情*/
+.order-detail-content {
+    text-align: left;
+    padding: 30px 0 20px 30px;
+    margin-bottom: 20px;
+}
+
+.order-detail-content.disabled,
+.order-detail-content.disabled:hover {
+    cursor: auto;
+}
+
+.order-detail-content .order-detail-title {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+    margin-right: 30px;
+}
+
+.order-detail-content .order-detail-text {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*订单商品列表*/
+.order-product-list .table-order-product-list {
+    font-size: 14px;
+}

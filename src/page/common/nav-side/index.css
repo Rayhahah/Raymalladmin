@@ -1,0 +1,36 @@
+/*侧面菜单栏*/
+.side-bar,
+.side-bar .navbar-collapse {
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar .nav-side {
+    background: #eee;
+}
+
+.side-bar .nav-side .nav-side-item {
+    vertical-align: middle;
+    color: #23527c;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    padding: 10px 0 10px 15px;
+    cursor: pointer;
+}
+
+.side-bar .nav-side .nav-side-item:hover {
+    background: #23527c;
+    color: #fff;
+}
+
+/*二级列表*/
+.side-bar .nav-side .nav-side-second .nav-side-item {
+    margin-left: 20px;
+    border: 0px;
+}
+
+.side-bar .nav-side .nav-side-item.active {
+    background: #23527c;
+    color: #fff;
+}
+

@@ -1,0 +1,105 @@
+/*
+统一的结构样式
+ */
+/*css reset*/
+/*去除DOM树中默认的属性*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6f6f6;
+    /*字体大小 行间距 字体*/
+    font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+/*定宽布局*/
+.w {
+    width: 1080px;
+    margin: 0 auto;
+    /*有需要绝对定位的就以当前为相对基准*/
+    position: relative;
+    /*清除浮动，超出边界不显示*/
+    overflow: hidden;
+}
+
+/*最大容器*/
+.page-content {
+    min-height: 568px;
+    background: #fff;
+    padding: 10px 40px 30px 35px;
+}
+
+/*标题样式*/
+.page-title {
+    position: relative;
+    font-size: 30px;
+    color: #666;
+    border-bottom: 1px solid #23527c;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/*容器*/
+.panel {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.panel .panel-title {
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.panel .panel-body {
+    padding: 10px;
+    overflow: hidden;
+}
+/*小图样式*/
+.p-img{
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+/*全局通用样式*/
+/*隐藏*/
+.hide {
+    display: none;
+}
+
+.btn-mini {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+/*错误信息*/
+.err-tip {
+    height: 70px;
+    line-height: 70px;
+    color: #e7380d;
+    text-align: center;
+    background: #eee;
+    font-weight: bold;
+    font-size: 18px;
+}

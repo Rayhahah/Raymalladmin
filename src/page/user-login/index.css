@@ -1,0 +1,38 @@
+.panel-login {
+    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.panel-login .login-title {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.panel-login .error-item {
+    display: none;
+    background: #ffe1e0;
+    margin-bottom: 10px;
+    border: 1px solid #ff0629;
+    padding: 5px;
+}
+
+.panel-login .error-item .error-icon {
+    color: #ff0629;
+
+}
+
+.panel-login .error-item .error-msg {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #ff0629;
+}
+
+.panel-login .btn-login {
+    font-size: 18px;
+    padding: 5px 0;
+}
+

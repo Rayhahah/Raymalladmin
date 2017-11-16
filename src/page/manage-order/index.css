@@ -1,0 +1,19 @@
+.order-list .table-order-list th {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.order-list .table-order-list td {
+    font-size: 14px;
+}
+
+.order-list #order-pagination {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.page-title .btn-refresh{
+position: absolute;
+    right: 25px;
+    top: 10px;
+}

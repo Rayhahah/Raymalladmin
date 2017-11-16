@@ -1,0 +1,36 @@
+<div class="category-current-info form-group form-inline">
+    <div class="form-group ">
+        <span class="btn btn-warning category-current-id ">当前商品分类ID：{{currentId}}</span>
+    </div>
+</div>
+<hr class="divider"/>
+<div class="category-list">
+    <table class="table table-striped table-bordered table-hover table-category-list">
+        <thead>
+        <tr>
+            <th width="30%">品类ID</th>
+            <th width="30%">品类名称</th>
+            <th width="40%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#list}}
+          <tr>
+              <td width="30%">{{id}}</td>
+              <td width="30%">{{name}}</td>
+              <td width="40%">
+                  <a class="set-category-name" data-id="{{id}}">修改名称</a>
+                  {{#isTop}}
+                  <a href="./manage-category.html?categoryId={{id}}" class="get-child-category">查看其子品类</a>
+                  {{/isTop}}
+              </td>
+          </tr>
+          {{/list}}
+        </tbody>
+    </table>
+     {{^list}}
+     <div class="err-tip">
+          <span>当前品类还没有子品类哦</span>
+     </div>
+     {{/list}}
+</div>

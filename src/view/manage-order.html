@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 side-bar">
+            <%= require('html-loader!./layout/nav-side.html') %>
+        </div>
+        <div class="col-md-10 page-content">
+            <div class="page-title">
+                订单管理
+                <button class="btn btn-default btn-info btn-refresh">重新加载</button>
+            </div>
+            <div class="page-body">
+                <div class="order-filter form-group form-inline">
+                    <select type="text" placeholder="按订单号查询" class="form-control form-inline order-sort-by">
+                        <option value="orderNo">按订单号查询</option>
+                    </select>
+                    <input type="text" placeholder="输入订单号" class="form-control order-input"/>
+                    <button class="btn btn-default btn-primary btn-query">查询</button>
+                </div>
+                <hr class="divider"/>
+                <div class="order-list">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= require('html-loader!./layout/footer.html') %>
+<script type="text/javascript" src="../util/jqpaginator.min.js"></script>
+
+</body>
+</html>

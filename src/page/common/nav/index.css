@@ -1,0 +1,19 @@
+.nav .container-fluid {
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav .nav-username {
+    font-size: 16px;
+    cursor: none;
+}
+
+.navbar-default .navbar-nav > li > a.nav-logout {
+    margin-right: 30px;
+    font-size: 16px;
+    color: #23527c;
+}
+
+.navbar-default .navbar-nav > li a.nav-logout:hover {
+    background: #ddd;
+}

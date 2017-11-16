@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 side-bar">
+            <%= require('html-loader!./layout/nav-side.html') %>
+        </div>
+        <div class="col-md-10 page-content">
+            <div class="page-title ">
+                品类管理 - 新增品类
+            </div>
+            <div class="page-body">
+
+                <div class="add-category-content">
+                    <div class="form-group  input-group">
+                        <a class="btn btn-default input-group-addon parent-category-title disabled">所属品类</a>
+                        <select type="text" placeholder="所属品类" class="select-parent-category">
+                        </select>
+                    </div>
+                    <div class="form-group  input-group">
+                        <a class="btn btn-default input-group-addon category-name disabled">品类名称</a>
+                        <input type="text" placeholder="请输入品类名称" class="input-category-name"/>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= require('html-loader!./layout/footer.html') %>
+<script type="text/javascript" src="../util/jqpaginator.min.js"></script>
+
+</body>
+</html>
