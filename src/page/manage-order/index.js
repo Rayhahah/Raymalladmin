@@ -59,7 +59,6 @@ var _manageOrder = {
                 pageNum: _this.data.listParams.pageNum,
                 pageSize: _this.data.listParams.pageSize
             }, function (res) {
-                console.log(res);
                 _this.renderOrderList(res);
             }, function (errMsg) {
                 _rm.errorTips(errMsg);

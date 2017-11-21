@@ -50,15 +50,14 @@ var config = {
         //文件生成的路径
         //这个和下面是一样的意思
         //webpack2.0以后不支持相对路径，所以需要添加_dirname
-        // path: __dirname + '/dist/',
-        path: './dist/',
-        // path: path.resolve(__dirname, 'dist'),
+        path: __dirname + '/dist/',
+        // path: './dist/',
 
         //publicPath : 表示生成的打包文件引用资源的域名，在正式环境下需要修改
         //文件访问的路径,不设置的话webpack-dev-server无法热编译
         //最后的斜杠需要添加，默认js和css文件会自动添加，但是url-loader是不会自动添加的
-        publicPath: '/dist/',
-        // publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.rayhahah.com/Raymallweb/dist/',
+        // publicPath: '/dist/',
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.rayhahah.com/Raymalladmin/dist/',
         //硬编码目标文件无法做到输出多个文件
         // filename: 'app.js'
         //这样就会根据入口的名字来对应生成目标文件，ps：webpack不会删除之前的文件
