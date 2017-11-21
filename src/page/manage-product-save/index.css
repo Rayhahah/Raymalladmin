@@ -1,0 +1,52 @@
+/*订单详情*/
+.product-detail-content {
+    text-align: left;
+    padding: 30px 0 20px 30px;
+    margin-bottom: 20px;
+}
+
+.product-detail-content.disabled,
+.product-detail-content.disabled:hover {
+    cursor: auto;
+}
+
+.product-detail-content .product-detail-title {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+    margin-right: 30px;
+}
+
+.product-detail-content .product-detail-text {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-detail-content .select-category,
+.product-detail-content .select-category-parent,
+.product-detail-content .select-category-child {
+    width: 160px;
+    height: 50px;
+    padding: 10px;
+    margin: 0 5px 3px 2px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold
+}
+
+.btn-product-detail {
+    margin-bottom: 10px;
+}
+.product-sub-images .sub-image .close-img {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    color: #aaa;
+    text-align: center;
+}
+.product-sub-images .sub-image .product-image{
+    width: 80px;
+    height: 80px;
+    display: inline;
+}

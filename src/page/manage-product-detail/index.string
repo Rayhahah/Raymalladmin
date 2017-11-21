@@ -1,0 +1,40 @@
+<div class="form-group ">
+    <span class="btn btn-warning product-detail-title ">商品名称：</span>
+    <span class="product-detail-text forn-control">{{name}}</span>
+</div>
+<div class="form-group ">
+    <span class="btn btn-warning product-detail-title">商品描述：</span>
+    <span class="product-detail-text forn-control">{{subtitle}}</span>
+</div>
+<div class="form-group ">
+    <span class="btn btn-warning product-detail-title">当前状态：</span>
+    <span class="product-detail-text forn-control">{{statusDesc}}</span>
+</div>
+<div class="form-group form-inline">
+    <span class="btn btn-warning product-detail-title">所属分类：</span>
+    <div class="form-group form-inline product-detail-text product-category-info">
+    </div>
+</div>
+<div class="form-group form-inline ">
+    <label class="btn btn-warning product-detail-title">商品价格：</label>
+    <div class="form-group form-inline input-group product-detail-text">
+        <input type="text" placeholder="{{price}}" class="form-control" disabled="disabled"/>
+        <a class="btn btn-default input-group-addon">元</a>
+    </div>
+</div>
+<div class="form-group form-inline ">
+    <span class="btn btn-warning product-detail-title">商品库存：</span>
+    <div class="form-group form-inline input-group product-detail-text">
+        <input type="text" placeholder="{{stock}}" class="form-control" disabled="disabled"/>
+        <a class="btn btn-default input-group-addon">件</a>
+    </div>
+</div>
+<div class="form-group form-inline">
+    <span class="btn btn-warning product-detail-title">商品图片：</span>
+    <div class="form-group product-images">
+    </div>
+</div>
+<span class="btn btn-warning product-detail-title btn-product-detail">商品详情：</span>
+<div class="form-group form-inline product-detail-text">
+   {{{detail}}}
+</div>
