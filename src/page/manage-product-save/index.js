@@ -94,7 +94,6 @@ var _productSave = {
 
         //事件委托上传点击，否则ajaxFileUpload会删除原来的input
         $(document).on('change', '#upload_file', function () {
-            console.log('change' + $(this));
             _product.uploadFileAjax('upload_file', function (res) {
                 _this.data.imageHost = res.url.substring(0, res.url.lastIndexOf('/') + 1);
                 _this.data.subImages.push(res.uri);
@@ -111,7 +110,6 @@ var _productSave = {
             var $this = $(this),
                 _id = $this.data('id');
             _this.data.subImages.remove(_id);
-            console.log(_this.data.subImages);
             _this.renderSubImage();
         });
         //事件委托选择品类父节点
@@ -268,7 +266,6 @@ var _productSave = {
     },
     //初始化富文本编辑器
     initSimditor: function () {
-        console.log(this.data.detail);
         this.editor = new Simditor({
             textarea: $('#rich-editor'),
             placeholder: this.data.detail,
