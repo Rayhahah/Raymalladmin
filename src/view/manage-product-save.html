@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+
+    <title><%= htmlWebpackPlugin.options.title%> - Raymall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav.html') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 side-bar">
+            <%= require('html-loader!./layout/nav-side.html') %>
+        </div>
+        <div class="col-md-10 page-content">
+            <div class="page-title">
+                商品管理 - 商品编辑
+            </div>
+            <div class="page-body">
+                <div class="product-detail-content ">
+                    <div class="form-group form-inline ">
+                        <span class="btn btn-warning product-detail-title ">商品名称：</span>
+                        <input type="text" placeholder="请输入商品名称"
+                               class="form-control product-detail-text input-product-name "/>
+                    </div>
+                    <div class="form-group form-inline">
+                        <span class="btn btn-warning product-detail-title">商品描述：</span>
+                        <input type="text" placeholder="请输入商品描述"
+                               class="form-control product-detail-text input-product-desc"/>
+                    </div>
+                    <div class="form-group form-inline">
+                        <span class="btn btn-warning product-detail-title">所属分类：</span>
+                        <div class="form-group form-inline product-detail-text product-category-info">
+                            <select class="select-category-parent">
+                            </select>
+                            <select class="select-category-child">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline ">
+                        <label class="btn btn-warning product-detail-title">商品价格：</label>
+                        <div class="form-group form-inline input-group product-detail-text">
+                            <input type="text" placeholder="输入商品单价" class="form-control input-product-price"/>
+                            <a class="btn btn-default input-group-addon">元</a>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline ">
+                        <span class="btn btn-warning product-detail-title">商品库存：</span>
+                        <div class="form-group form-inline input-group product-detail-text">
+                            <input type="text" placeholder="输入商品库存" class="form-control input-product-stock"/>
+                            <a class="btn btn-default input-group-addon">件</a>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <span class="btn btn-warning product-detail-title">商品图片：</span>
+                        <div class="form-group product-images">
+                            <div class="product-sub-images">
+                                <div class="sub-image">
+                                </div>
+                            </div>
+                            <div>
+                                <input type="file" name="upload_file" id="upload_file"
+                                       accept="image/gif,image/jpeg,image/jpg,image/png" style="display: block;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="btn btn-warning product-detail-title btn-product-detail">商品详情：</span>
+                    <div class="form-group form-inline product-detail-text">
+                        <textarea id="rich-editor" autofocus></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block btn-submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

@@ -38,6 +38,9 @@ var config = {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
         'user-login': ['./src/page/user-login/index.js'],
+        'manage-product': ['./src/page/manage-product/index.js'],
+        'manage-product-detail': ['./src/page/manage-product-detail/index.js'],
+        'manage-product-save': ['./src/page/manage-product-save/index.js'],
         'manage-order': ['./src/page/manage-order/index.js'],
         'manage-order-detail': ['./src/page/manage-order-detail/index.js'],
         'manage-category': ['./src/page/manage-category/index.js'],
@@ -68,6 +71,10 @@ var config = {
         loaders: [
             //探测到css结尾的，就用css-loader处理，顺序是css-loader处理的结果再给style-loader
             {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style', 'css!sass')
+            },
             //探测所有图片资源，limit的作用是当大小小于100则会打成base64，否则就会放到资源文件夹里面
             //指定名字并且保留扩展名
             {test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},
@@ -86,6 +93,10 @@ var config = {
             //引入本地未模块化的js文件
             {
                 test: require.resolve('./src/util/jqpaginator.min.js'),
+                loader: 'exports-loader?window.anno!script-loader'
+            },
+            {
+                test: require.resolve('./src/util/ajaxfileupload.js'),
                 loader: 'exports-loader?window.anno!script-loader'
             }
         ]
@@ -116,6 +127,9 @@ var config = {
         //项目模板参数
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '后台登陆')),
+        new HtmlWebpackPlugin(getHtmlConfig('manage-product', '商品管理')),
+        new HtmlWebpackPlugin(getHtmlConfig('manage-product-detail', '商品详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('manage-product-save', '商品编辑')),
         new HtmlWebpackPlugin(getHtmlConfig('manage-order', '订单管理')),
         new HtmlWebpackPlugin(getHtmlConfig('manage-order-detail', '订单详情')),
         new HtmlWebpackPlugin(getHtmlConfig('manage-category', '品类管理')),

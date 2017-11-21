@@ -12,6 +12,8 @@ var _rm = require('util/rm.js');
 var _order = require('service/order-service.js');
 var navSide = require('page/common/nav-side/index.js');
 var templateHtml = require('./index.string');
+
+
 var _manageOrder = {
     data: {
         type: 'list',

@@ -5,11 +5,73 @@
 var Hogan = require('hogan');
 var _dialog = require('util/dialog/index.js');
 var _loading = require('util/loading/index.js');
+require("exports?window.anno!./ajaxfileupload.js");
 //服务器主机地址配置
 var conf = {
     serverHost: ''
 };
 var _rm = {
+    // ajaxfileupload插件上传文件
+    ajaxUpload: function (params) {
+        var _this = this;
+        $.ajaxFileUpload({
+            url: params.url || '',
+            secureuri: false,// 安全提交，默认为false
+            fileElementId: params.fileId || '',// 文件input标签的id
+            dataType: "json",// 返回值类型
+            success: function (res) {
+                //请求成功
+                if (0 === res.status) {
+                    typeof params.success === 'function' && params.success(res.data, res.msg);
+                }
+                //需要强制登陆
+                else if (10 === res.status) {
+                    _this.doLogin();
+                }
+                //请求数据发生错误
+                else if (1 === res.status) {
+                    typeof params.error === 'function' && params.error(res.msg);
+                }
+            },
+            error: function (err) {
+                typeof params.error === 'function' && params.error(err.statusText);
+            }
+        });
+    },
+    //上传文件或者图片
+    upload: function (params) {
+        var _this = this;
+        //   var formData = new FormData();
+        // formData.append('file', $('#file')[0].files[0]);
+        // formData.append('vid', $("#videoId").val());
+        $.ajax({
+            type: 'POST',
+            url: params.url || '',
+            dataType: params.type || 'json',
+            data: params.data || '',
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                //请求成功
+                if (0 === res.status) {
+                    typeof params.success === 'function' && params.success(res.data, res.msg);
+                }
+                //需要强制登陆
+                else if (10 === res.status) {
+                    _this.doLogin();
+                }
+                //请求数据发生错误
+                else if (1 === res.status) {
+                    typeof params.error === 'function' && params.error(res.msg);
+                }
+            },
+            error: function (err) {
+                typeof params.error === 'function' && params.error(err.statusText);
+            }
+        });
+
+    },
     //异步网络请求
     request: function (params) {
         var _this = this;
@@ -57,13 +119,15 @@ var _rm = {
         return result;
     },
     // 成功提示
-    successTips: function (msg) {
+    successTips: function (msg,confirm) {
         _dialog.show({
             isConfirm: false,
             message: msg || '操作成功！',
             target: 'body',
             onConfirm: function () {
-                _dialog.hide();
+                _dialog.hide(function () {
+                    typeof  confirm === 'function' && confirm();
+                });
             },
             onCancel: function () {
             }

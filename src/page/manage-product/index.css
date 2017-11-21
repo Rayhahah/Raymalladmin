@@ -1,0 +1,28 @@
+.product-list .table-product-list th {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.product-list .table-product-list td {
+    font-size: 14px;
+}
+
+.product-list #product-pagination {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/*刷新列表按钮*/
+.page-title .btn-refresh {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+
+/*新增货物按钮*/
+.page-title .btn-add-product {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+

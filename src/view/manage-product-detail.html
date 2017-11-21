@@ -13,21 +13,16 @@
             <%= require('html-loader!./layout/nav-side.html') %>
         </div>
         <div class="col-md-10 page-content">
-            <div class="page-title ">
-                品类管理
-                <button class="btn btn-default btn-info btn-refresh">重新加载</button>
-                <a href="./manage-category-add.html" class="btn btn-success btn-add-category">
-                    <i class="fa fa-plus fa-fw"></i>
-                    <span>新增品类</span>
-                </a>
+            <div class="page-title">
+                商品管理 - 商品详情
             </div>
             <div class="page-body">
+                <div class="product-detail-content btn btn-default btn-block disabled">
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<%= require('html-loader!./layout/footer.html') %>
-
+    <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>
